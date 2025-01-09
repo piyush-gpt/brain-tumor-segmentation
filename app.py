@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
-import tensorflow as tf
 import numpy as np
 import cv2
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+import tensorflow as tf
 from matplotlib import pyplot as plt
 
 # Initialize Flask app
