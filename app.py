@@ -29,14 +29,14 @@ os.makedirs(RESULT_FOLDER, exist_ok=True)
 # Load model at startup instead of using before_first_request
 # In app.py, modify the model loading part
 try:
-    model = tf.keras.models.load_model('brain_tumor.keras', 
+    model = tf.keras.models.load_model('models/brain_tumor.keras', 
                                      custom_objects={'dice_coefficient': lambda y_true, y_pred: y_pred},
                                      compile=False)  # Add compile=False
 except Exception as e:
     print(f"Error loading model: {str(e)}")
     # Optionally add fallback loading method if needed
     try:
-        model = tf.keras.models.load_model('brain_tumor.keras', compile=False)
+        model = tf.keras.models.load_model('models/brain_tumor.keras', compile=False)
     except Exception as e:
         print(f"Fallback loading failed: {str(e)}")
         raise
