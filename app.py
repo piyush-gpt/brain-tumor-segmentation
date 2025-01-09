@@ -14,6 +14,9 @@ RESULT_FOLDER = './static/results/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(RESULT_FOLDER, exist_ok=True)
+
 # Load the trained model (saved as .keras format)
 model = tf.keras.models.load_model('brain_tumor.keras', custom_objects={'dice_coefficient': lambda y_true, y_pred: y_pred})  # Add custom metrics if necessary
 
