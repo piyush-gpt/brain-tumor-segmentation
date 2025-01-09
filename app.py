@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import os
 import uuid
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 import tensorflow as tf
 from matplotlib import pyplot as plt
 
